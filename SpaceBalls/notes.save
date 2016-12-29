@@ -1,0 +1,6 @@
+To do in project:
+-delete ships that go out of bounds
+-strId and weaknessId need to be separate so a ball can get destroyed upon 
+contact
+	-perhaps make strId and/or WeaknessId a list so there can be 
+	 multiple relations
