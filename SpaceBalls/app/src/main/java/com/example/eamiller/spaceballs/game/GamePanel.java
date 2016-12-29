@@ -61,6 +61,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback, dr
         thread.setRunning(true);
     }
 
+    private int ballAlertInt = 0;
+
+
 
 
     public GamePanel(Context context){
@@ -278,6 +281,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback, dr
             statusBar.draw(canvas);
             drawShootingLine(canvas);
             ballChanger.draw(canvas);
+            if(ballAlertInt>0){
+                drawNewBallAlert(canvas);
+            }
             drawCurrentLVL(canvas);
             canvas.restoreToCount(savedState);
         }
@@ -317,6 +323,23 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback, dr
         mTextPaint.setColor(Color.WHITE);
         mTextPaint.setTextSize(scaledTextSize);
         c.drawText("Level: " + this.lvlManager.getCurrentLevel(), (float)(getWidth()/(2.4)), (int)(100*heightFactor), mTextPaint);
+    }
+
+    private void drawNewBallAlert(Canvas c){
+        Paint p = new Paint();
+        p.setColor(Color.GREEN);
+        p.setTextSize((int)(100*GamePanel.heightFactor));
+        if(ballAlertInt<100){
+            c.drawText("New Ball!", getWidth()/2-(int)(300*GamePanel.widthFactor), getHeight()/2, p);
+        }else{
+            c.drawText("Touch Right to change ball", getWidth()/2-(int)(600*GamePanel.widthFactor), (int)(getHeight()/2+120*GamePanel.heightFactor), p);
+        }
+        ballAlertInt++;
+        if(ballAlertInt>200) ballAlertInt = 0;
+    }
+
+    public void drawNewBallAlert(){
+        ballAlertInt++;
     }
 
     public ArrayList<GameCharacter> getShipEntities() {

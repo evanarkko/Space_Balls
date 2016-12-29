@@ -100,6 +100,7 @@ public class LevelManager implements updateable {
                 break;
             case 5:
                 if(shipContainer.isEmpty()){
+                    gp.drawNewBallAlert();
                     gp.getPlayer().setAmountOfDifferentBalls(2);
                     //gp.infromPlayerAboutNewBall();
                     shipContainer.addAll(golfShips(2, 100, 840));
