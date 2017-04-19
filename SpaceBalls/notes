@@ -1,2 +1,8 @@
 To do in project:
--delete death animations that go out of bounds
+-finish making tutorial (simple+quick w pics)
+-learn how to make an exit button in a SurfaceView (gamepanel,tutpanel)
+	-aka how to exit with ontouchevent
+	-make this the last button of tutorial
+	-put this button in "game over"- display
+-make fire animation on wooden ships (shuold be done in deathanimator class)
+

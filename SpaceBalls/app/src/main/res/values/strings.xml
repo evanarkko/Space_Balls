@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Space Balls</string>
     <string name="play_game_button">Play Ball</string>
+    <string name="how_to_play_button">How To Play?</string>
     <string name="high_scores_button">Highscores</string>
     <string name="settings_button">Settings</string>
 </resources>
